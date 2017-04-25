@@ -1,4 +1,6 @@
 .DS_Store
 /vendor/
+/sql/
 /logs/*
 !/logs/README.md
+/env/
