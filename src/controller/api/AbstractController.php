@@ -1,7 +1,5 @@
 <?php
-// TurboController
-
-class TurboController {
+class AbstractController {
 
     protected $container;
 
