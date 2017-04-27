@@ -7,6 +7,15 @@ class UniverseController extends AbstractController {
         $data = array(
             'universe' => 'get'
         );
+        return $response->withJson(Universe::all(), 201);
+    }
+
+    public function post($request, $response, $args) {
+        $this->container->get('logger')->info("browsing API /universe [POST]");
+
+        $data = array(
+            'universe' => 'post'
+        );
         return $response->withJson($data, 201);
     }
 }

@@ -4,8 +4,14 @@ class CreatorController extends AbstractController {
     public function get($request, $response, $args) {
         $this->container->get('logger')->info("browsing API /creator [GET]");
 
+        return $response->withJson(Creator::all(), 201);
+    }
+
+    public function post($request, $response, $args) {
+        $this->container->get('logger')->info("browsing API /creator [POST]");
+
         $data = array(
-            'creator' => 'get'
+            'creator' => 'post'
         );
         return $response->withJson($data, 201);
     }

@@ -20,10 +20,11 @@ return [
 
         // Database settings
         'db' => [
+            'driver' => 'mysql',
             'host' => 'localhost',
+            'database' => 'villain_database',
             'username' => 'root',
             'password' => '',
-            'database' => 'villain_database',
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => ''
