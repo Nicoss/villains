@@ -16,15 +16,13 @@ class AdminController {
     }
 
 
-    public function blaireau($request, $response, $args) {
-        $this->container->get('logger')->info("browsing ADMIN /blaireau");
-
-        //$this->flash->addMessage('Test', 'This is a message');
+    public function index($request, $response, $args) {
+        $this->container->get('logger')->info("browsing ADMIN /");
 
         $data = array(
-            'admin' => 'blaireau'
+            'admin' => 'index'
         );
-        return $this->view->render($response, 'indexBlaireau.html.twig', $data);
+        return $this->view->render($response, 'index.html.twig', $data);
 
     }
 

@@ -38,7 +38,6 @@ require __DIR__ . '/../env/auth.php';
 require __DIR__ . '/../src/middleware.php';
 
 // Register routes
-require __DIR__ . '/../src/routes/main.php';
 require __DIR__ . '/../src/routes/api.php';
 require __DIR__ . '/../src/routes/admin.php';
 require __DIR__ . '/../src/routes/front.php';

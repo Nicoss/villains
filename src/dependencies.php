@@ -3,12 +3,6 @@
 
 $container = $app->getContainer();
 
-// view renderer
-$container['renderer'] = function ($c) {
-    $settings = $c->get('settings')['renderer'];
-    return new Slim\Views\PhpRenderer($settings['template_path']);
-};
-
 // monolog
 $container['logger'] = function ($c) {
     $settings = $c->get('settings')['logger'];
@@ -30,7 +24,13 @@ $container['db'] = function ($c) {
 
 // twig
 $container['view'] = function ($c) {
-    $view = new \Slim\Views\Twig(__DIR__ . '/../templates/admin', [
+    $templateDirectories = [
+        __DIR__ . '/../templates',
+        __DIR__ . '/../templates/common',
+        __DIR__ . '/../templates/admin',
+    ];
+
+    $view = new \Slim\Views\Twig($templateDirectories, [
         'cache' => false
     ]);
     
