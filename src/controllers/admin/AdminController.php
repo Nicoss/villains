@@ -19,23 +19,15 @@ class AdminController {
     public function index($request, $response, $args) {
         $this->container->get('logger')->info("browsing ADMIN /");
 
-        $data = array(
-            'admin' => 'index'
-        );
-        return $this->view->render($response, 'index.html.twig', $data);
-
+        return $this->view->render($response, 'index.html.twig');
     }
 
-    public function mongolo($request, $response, $args) {
-        $this->container->get('logger')->info("browsing ADMIN /mongolo");
-
-        //$messages = $this->flash->getMessages();
-        //print_r($messages);
+    public function creator($request, $response, $args) {
+        $this->container->get('logger')->info("browsing ADMIN /creator");
 
         $data = array(
             'admin' => 'mongolo'
         );
-        return $this->view->render($response, 'indexMongolo.html.twig', $data);
-
+        return $this->view->render($response, 'creator.html.twig', $data);
     }
 }

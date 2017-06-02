@@ -45,3 +45,14 @@ $container['view'] = function ($c) {
 $container['flash'] = function ($c) {
     return new \Slim\Flash\Messages();
 };
+
+/*$container['api'] = function($c) {
+    // $models = array(
+    //     'villain'   => new VillainController($c);
+    // );
+
+    $models = array();
+
+    return $models;
+};
+*/

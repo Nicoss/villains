@@ -104,6 +104,7 @@ table {
 /***********/
 body {
     font-family: 'Roboto-Regular';
+    background-color: #f0f0f0;
 }
 
 /**********/
@@ -135,16 +136,62 @@ body {
     flex-grow: 1;
 }
 
+/********/
+/* MENU */
+/********/
+
 #menu {
-    background-color: #3d3c3c;
     color: #e1e1e1;
     width: 100px;
     height: 100%;
     left: 0;
     position: absolute;
+    background-color: #3d3c3c;
 }
 
 #menu .sections .item {
-    font-family: 'Roboto-Light';
+    font-family: 'Roboto';
     text-align: center;
+    list-style: none;
+    border: 1px solid #474646;
+    background-color: #3d3c3c;
+    display: block;
+}
+
+#menu .sections .item:hover {
+    background-color: #424141;
+    border-left: 1px solid #f06261;
+}
+
+#menu .sections .item a {
+    text-decoration: none;
+    display: block;
+    padding: 15px;
+}
+
+#menu .sections .item .icon-item {
+    display: block;
+}
+
+#menu .sections .item .icon-item img {
+    height: 33px;
+}
+
+#menu .sections .item .label-item {
+    display: block;
+    color: #e1e1e1;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+/***********/
+/* CONTENT */
+/***********/
+
+#content {
+    padding: 20px;
+    position: relative;
+    min-height: 100%;
+    left: 0px;
+    margin-left: 100px;
 }

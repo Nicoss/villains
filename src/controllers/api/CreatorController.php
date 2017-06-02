@@ -9,7 +9,7 @@ class CreatorController extends AbstractController {
 
     public function post($request, $response, $args) {
         $this->container->get('logger')->info("browsing API /creator [POST]");
-
+        
         $data = array(
             'creator' => 'post'
         );

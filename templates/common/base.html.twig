@@ -32,43 +32,65 @@
         </div>
         <div id="menu">
             <div class="sections">
-                <div class="item creator">
-                    Creator
-                </div>
-                <div class="item hero">
-                    Hero
-                </div>
-                <div class="item media">
-                    Media
-                </div>
-                <div class="item organization">
-                    Organization
-                </div>
-                <div class="item physical-distinction">
-                    Physical distinction
-                </div>
-                <div class="item saga">
-                    Saga
-                </div>
-                <div class="item species">
-                    Species
-                </div>
-                <div class="item universe">
-                    Universe
-                </div>
-                <div class="item villain">
-                    Villain
-                </div>
+                <li class="item">
+                    <a href="{{ path_for('admin_creator') }}" class="creator">
+                        <i class="icon-item"><img src="/web/styles/images/creator.png"></i>
+                        <span class="label-item">Creator</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#" class="hero">
+                        <i class="icon-item"><img src="/web/styles/images/hero.png"></i>
+                        <span class="label-item">Hero</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#" class="media">
+                        <i class="icon-item"><img src="/web/styles/images/media.png"></i>
+                        <span class="label-item">Media</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#" class="organization">
+                        <i class="icon-item"><img src="/web/styles/images/organization.png"></i>
+                        <span class="label-item">Organization</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#" class="physical-distinction">
+                        <i class="icon-item"><img src="/web/styles/images/physical_distinction.png"></i>
+                        <span class="label-item">Physical distinction</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#" class="saga">
+                        <i class="icon-item"><img src="/web/styles/images/saga.png"></i>
+                        <span class="label-item">Saga</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#" class="species">
+                        <i class="icon-item"><img src="/web/styles/images/species.png"></i>
+                        <span class="label-item">Species</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#" class="universe">
+                        <i class="icon-item"><img src="/web/styles/images/universe.png"></i>
+                        <span class="label-item">Universe</span>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="#" class="villain">
+                        <i class="icon-item"><img src="/web/styles/images/villain.png"></i>
+                        <span class="label-item">Villain</span>
+                    </a>
+                </li>
             </div>
         </div>
         <div id="content">
             {% block content %}
 
-            {% endblock %}
-        </div>
-        <div id="footer">
-            {% block footer %}
-                
             {% endblock %}
         </div>
     </body>
