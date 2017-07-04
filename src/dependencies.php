@@ -2,6 +2,7 @@
 // DIC configuration
 
 $container = $app->getContainer();
+$villain_database = $app;
 
 // monolog
 $container['logger'] = function ($c) {
@@ -46,13 +47,12 @@ $container['flash'] = function ($c) {
     return new \Slim\Flash\Messages();
 };
 
-/*$container['api'] = function($c) {
-    // $models = array(
-    //     'villain'   => new VillainController($c);
-    // );
-
-    $models = array();
-
-    return $models;
+$container['app'] = function ($c) {
+    return $villain_database;
 };
-*/
+
+$container['api'] = function ($c) {
+    $api = array();
+    $api['creator'] = new CreatorController($c);
+    return $api;
+};

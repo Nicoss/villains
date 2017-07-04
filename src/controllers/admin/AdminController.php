@@ -6,6 +6,7 @@ class AdminController {
     protected $container;
     protected $view;
     protected $flash;
+    protected $api;
 
     //Constructor
     public function __construct(Slim\Container $container) 
@@ -13,8 +14,8 @@ class AdminController {
         $this->container = $container;
         $this->view = $container['view'];
         $this->flash = $container['flash'];
+        $this->api = $container['api'];
     }
-
 
     public function index($request, $response, $args) {
         $this->container->get('logger')->info("browsing ADMIN /");
@@ -24,6 +25,8 @@ class AdminController {
 
     public function creator($request, $response, $args) {
         $this->container->get('logger')->info("browsing ADMIN /creator");
+
+        var_dump($this->api['creator']->get($request, $response, $args));die();
 
         $data = array(
             'admin' => 'mongolo'
