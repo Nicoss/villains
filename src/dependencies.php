@@ -27,7 +27,6 @@ $container['db'] = function ($c) {
 $container['view'] = function ($c) {
     $templateDirectories = [
         __DIR__ . '/../templates',
-        __DIR__ . '/../templates/common',
         __DIR__ . '/../templates/admin',
     ];
 

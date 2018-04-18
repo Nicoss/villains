@@ -1,10 +1,6 @@
 <?php
 // Routes API
 $app->group('/api', function () use ($app) {
-    // Abstract
-    $app->get('/blaireau', \AbstractController::class . ':blaireau')->setName('api_abstract_blaireau');
-    $app->get('/mongolo', \AbstractController::class . ':mongolo')->setName('api_abstract_mongolo');
-
     // Creator
     $app->get('/creator', \CreatorController::class . ':get')->setName('api_creator_get');
     $app->post('/creator', \CreatorController::class . ':create')->setName('api_creator_post');

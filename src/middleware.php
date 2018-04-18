@@ -8,7 +8,7 @@ $app->add(new \Slim\Middleware\HttpBasicAuthentication([
 	"path" => ["/admin"],
     /* "passthrough" => ["/api/token", "/admin/ping"], */
     "secure" => true,
-    "relaxed" => ["localhost", "0.0.0.0"],
+    "relaxed" => ["villain", "localhost", "127.0.0.1"],
     "realm" => "Protected",
 	"users" => [
         "nicoss" => getenv("NICOSS_PASSWORD")

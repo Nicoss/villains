@@ -10,6 +10,7 @@ if (PHP_SAPI == 'cli-server') {
 }
 
 require __DIR__ . '/../vendor/autoload.php';
+require __DIR__ . '/../src/controllers/IndexController.php';
 
 spl_autoload_register(function ($class) {
     if (file_exists(__DIR__ . '/../src/middleware/' . $class . '.php'))
@@ -20,6 +21,8 @@ spl_autoload_register(function ($class) {
         require __DIR__ . '/../src/controllers/api/' . $class . '.php';
     elseif (file_exists(__DIR__ . '/../src/controllers/admin/' . $class . '.php'))
         require __DIR__ . '/../src/controllers/admin/' . $class . '.php';
+    elseif (file_exists(__DIR__ . '/../src/controllers/' . $class . '.php'))
+        require __DIR__ . '/../src/controllers/' . $class . '.php';
     else
         echo 'Could not load class ' . $class;
 });
@@ -40,7 +43,8 @@ require __DIR__ . '/../src/middleware.php';
 // Register routes
 require __DIR__ . '/../src/routes/api.php';
 require __DIR__ . '/../src/routes/admin.php';
-require __DIR__ . '/../src/routes/front.php';
+
+$app->get('/', \IndexController::class . ':index')->setName('index');
 
 // Run app
 $app->run();
