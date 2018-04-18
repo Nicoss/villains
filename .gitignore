@@ -2,5 +2,7 @@
 /vendor/
 /sql/
 /logs/*
+/node_modules/
+/node_modules/*
 !/logs/README.md
 /env/

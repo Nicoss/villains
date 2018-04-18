@@ -40,3 +40,16 @@ compileSass({
     dest : 'public/web/admin/styles/main.min.css',
     style: 'compressed'
 });
+
+// Expanded
+compileSass({
+    src : 'assets/app.scss',
+    dest: 'public/web/app/styles/main.css'
+});
+
+// Minified
+compileSass({
+    src : 'assets/app.scss',
+    dest : 'public/web/app/styles/main.min.css',
+    style: 'compressed'
+});

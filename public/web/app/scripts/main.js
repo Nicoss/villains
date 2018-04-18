@@ -1,0 +1,1 @@
+console.log("Congratulations ! You've mad it throught installation.");

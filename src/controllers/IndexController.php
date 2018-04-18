@@ -13,8 +13,6 @@ class IndexController {
     {
         $this->container = $container;
         $this->view = $container['view'];
-        $this->flash = $container['flash'];
-        $this->api = $container['api'];
     }
 
     public function index($request, $response, $args) {

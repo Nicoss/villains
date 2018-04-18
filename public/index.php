@@ -41,10 +41,9 @@ require __DIR__ . '/../env/auth.php';
 require __DIR__ . '/../src/middleware.php';
 
 // Register routes
+$app->get('/', \IndexController::class . ':index')->setName('index');
 require __DIR__ . '/../src/routes/api.php';
 require __DIR__ . '/../src/routes/admin.php';
-
-$app->get('/', \IndexController::class . ':index')->setName('index');
 
 // Run app
 $app->run();
