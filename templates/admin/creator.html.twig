@@ -7,7 +7,7 @@
         <form method="post" class="form-model-create" action="{{ path_for('admin_creator_create') }}">
             {% for input in form_inputs %}
                 <div class="form-create-input-container">
-                    <label>{{ input.label }} : <input type="{{input.type}}" class="form-input" name="{{ input.name }}"/></label>
+                    <label>{{ input.label }} : <input type="{{input.type}}" class="form-input" required="required" name="{{ input.name }}"/></label>
                 </div>
             {% endfor %}
             <div class="form-create-input-container">

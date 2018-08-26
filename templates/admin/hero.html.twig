@@ -1,0 +1,53 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Hero{% endblock %}
+
+{% block content %}
+    <div class="model-create-container">
+        <form method="post" class="form-model-create" action="{{ path_for('admin_hero_create') }}">
+            {% for input in form_inputs %}
+                <div class="form-create-input-container">
+                    {% if input.type == "text" %}
+                         <label>{{ input.label }} : <input type="{{input.type}}" class="form-input" required="required" name="{{ input.name }}"/></label>
+                    {% elseif input.type == "textarea" %}
+                        <label>{{ input.label }} : <textarea class="form-input" required="required" name="{{ input.name }}"></textarea></label>
+                    {% elseif input.type == "select" %}
+                        <label>{{ input.label }} : <select name="{{ input.name }}">
+                            {% for option in input.values %}
+                                <option value"{{ option.id }}">{{option.nickname}}</option>
+                            {% endfor %}
+                        </select></label>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            <div class="form-create-input-container">
+                <input type="submit" class="form-create-input form-submit" value="Submit"/>
+            </div>
+        </form>
+    </div>
+
+    <div class="block">
+        Existing Herores :
+    </div>
+
+    <div class="model-list">
+        {% for hero in heroes %}
+            <div class="model-container">
+                <div class="model-row">{{hero.nickname}}</div>
+                <div class="model-row">{{hero.first_name}}</div>
+                <div class="model-row">{{hero.last_name}}</div>
+                <div class="model-row">{{hero.description}}</div>
+                <div class="model-row">{{hero.created_by}}</div>
+                <div class="model-row">{{hero.species}}</div>
+            </div>
+
+            <div class="model-delete-container">
+                <form method="post" class="form-model-delete" action="{{ path_for('admin_herp_delete', {'id': hero.id}) }}">
+                    <div class="form-create-input-container">
+                        <input type="submit" class="form-delete-input form-submit" value="Delete"/>
+                    </div>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -41,7 +41,8 @@ class AdminCreatorController {
                 array(
                     'name' => 'year',
                     'label' => 'Birth year',
-                    'type' => 'number'
+                    'type' => 'number',
+                    'list' => Species::all()
                 )
             )
         );
