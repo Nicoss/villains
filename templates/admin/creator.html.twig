@@ -3,7 +3,39 @@
 {% block title %}Creator{% endblock %}
 
 {% block content %}
+    <div class="model-create-container">
+        <form method="post" class="form-model-create" action="{{ path_for('admin_creator_create') }}">
+            {% for input in form_inputs %}
+                <div class="form-create-input-container">
+                    <label>{{ input.label }} : <input type="{{input.type}}" class="form-input" name="{{ input.name }}"/></label>
+                </div>
+            {% endfor %}
+            <div class="form-create-input-container">
+                <input type="submit" class="form-create-input form-submit" value="Submit"/>
+            </div>
+        </form>
+    </div>
+
     <div class="block">
-        Creator
+        Existing Creators :
+    </div>
+
+    <div class="model-list">
+        {% for creator in creators %}
+            <div class="model-container">
+                <div class="model-row">{{creator.nickname}}</div>
+                <div class="model-row">{{creator.first_name}}</div>
+                <div class="model-row">{{creator.last_name}}</div>
+                <div class="model-row">{{creator.year}}</div>
+            </div>
+
+            <div class="model-delete-container">
+                <form method="post" class="form-model-delete" action="{{ path_for('admin_creator_delete', {'id': creator.id}) }}">
+                    <div class="form-create-input-container">
+                        <input type="submit" class="form-delete-input form-submit" value="Delete"/>
+                    </div>
+                </form>
+            </div>
+        {% endfor %}
     </div>
 {% endblock %}

@@ -22,9 +22,19 @@
         <link href="/web/app/styles/main.css" rel="stylesheet" />
     </head>
     <body>
-        <h1>Congratulations</h1>
-        <p>You've mad it throught installation.</p>
+        <div id="app">
+            ${ message }
 
+            <p>
+                <router-link to="/foo">Go to Foo</router-link>
+                <router-link to="/bar">Go to Bar</router-link>
+            </p>
+
+            <router-view></router-view>
+        </div>
+
+        <script type="text/javascript" src="/web/app/scripts/vue.js"></script>
+        <script type="text/javascript" src="/web/app/scripts/vue-router.js"></script>
         <script type="text/javascript" src="/web/app/scripts/main.js"></script>
     </body>
 </html>

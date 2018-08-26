@@ -22,15 +22,4 @@ class AdminController {
 
         return $this->view->render($response, 'admin/index.html.twig');
     }
-
-    public function creator($request, $response, $args) {
-        $this->container->get('logger')->info("browsing ADMIN /creator");
-
-        //var_dump($this->api['creator']->get($request, $response, $args));die();
-
-        $data = array(
-            'admin' => 'mongolo'
-        );
-        return $this->view->render($response, 'admin/creator.html.twig', $data);
-    }
 }
